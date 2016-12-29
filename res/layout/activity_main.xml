@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@android:color/white" >
 
-    <Button
-        android:id="@+id/setpassword"
-        android:layout_width="wrap_content"
+    <include
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="创建手势密码" />
+        android:layout_alignParentTop="true"
+        layout="@layout/include_top_layout" />
 
-    <Button
-        android:id="@+id/modifypassword"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="修改手势密码" />
+        android:layout_below="@+id/top_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="22sp"
+        android:textColor="#000000"
+        android:gravity="center_horizontal"
+        android:text="手势密码设置" />
 
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ll_set"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="删除" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical" >
 
-   
+        <Button
+            android:id="@+id/setpassword"
+            style="@style/btn"
+            android:text="创建手势密码" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/modifypassword"
+            style="@style/btn"
+            android:text="修改手势密码" />
+
+        <Button
+            android:id="@+id/delete"
+            style="@style/btn"
+            android:text="删除" />
+    </LinearLayout>
+
+</RelativeLayout>

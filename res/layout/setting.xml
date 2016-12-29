@@ -3,16 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
+    
+    <include
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/include_top_layout" />
+    
     <TextView
         android:id="@+id/multi_tv_token_time_hint"
         style="@style/textview"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/top_layout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+        android:textColor="@android:color/white"
         android:text="@string/plz_draw_code"
         android:textSize="22sp" />
     
     <com.example.password.component.LocusPassWordView
+        android:layout_below="@+id/top_layout"
         android:id="@+id/mPassWordView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>

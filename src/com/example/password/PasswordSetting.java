@@ -1,7 +1,11 @@
 package com.example.password;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,13 +22,17 @@ import com.example.password.util.SharedPreferencesHelper;
  * @author fantasee
  * 
  */
-public class PasswordSetting extends PassWordBaseActivity {
+public class PasswordSetting extends PassWordBaseActivity implements OnClickListener {
 
 	private LocusPassWordView mPwdView;
 	private Context mContext;
 	private TextView mTitle;
 
 	private String pswone = "";
+	
+	
+//	private LinearLayout topLayout;
+//	private TextView toptitle;
 
 	@Override
 	protected void init() {
@@ -33,15 +41,22 @@ public class PasswordSetting extends PassWordBaseActivity {
 
 	@Override
 	protected void findView() {
+		super.findView();
 		mContext = getApplicationContext();
 		mPwdView = (LocusPassWordView) this.findViewById(R.id.mPassWordView);
 		mTitle = (TextView) this.findViewById(R.id.multi_tv_token_time_hint);
-
-		mTitle.setText("请输入密码");
+		
+//		topLayout = (LinearLayout) findViewById(R.id.ll_top_bar_left);
+//		toptitle = (TextView) findViewById(R.id.titlebar_name_tv);
+		
+		toptitle.setText("创建手势密码");
+		mTitle.setText("请绘制手势密码");
 	}
 
 	@Override
 	protected void setListener() {
+		super.setListener();
+		
 		mPwdView.setOnCompleteListener(new OnCompleteListener() {
 			@Override
 			public void onComplete(String mPassword) {
@@ -51,6 +66,9 @@ public class PasswordSetting extends PassWordBaseActivity {
 
 				if (TextUtils.isEmpty(pswone)) {
 					pswone = md5.toMd5(mPassword, "");
+					mTitle.setText("请再次绘制手势密码");
+					mPwdView.clearPassword();
+					return;
 				} else {
 					if (pswone.equals(md5.toMd5(mPassword, ""))) {
 						// 设置成功
@@ -61,17 +79,29 @@ public class PasswordSetting extends PassWordBaseActivity {
 						mTitle.setText("设置成功");
 						finish();
 					} else {
-						mTitle.setText("请输入与第一次相同的密码");
+						mTitle.setText("与上次输入不一致，请重新绘制");
+						mTitle.setTextColor(Color.RED);
 						mPwdView.markError();
 					}
 
 				}
-				mPwdView.clearPassword();
-				mTitle.setText("请再次输入密码");
-				return;
+				
 			}
 
 		});
 	}
+
+//	@Override
+//	public void onClick(View v) {
+//		switch (v.getId()) {
+//		case R.id.ll_top_bar_left:
+//			finish();
+//			break;
+//
+//		default:
+//			break;
+//		}
+//		
+//	}
 
 }

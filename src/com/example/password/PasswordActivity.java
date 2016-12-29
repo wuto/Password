@@ -20,7 +20,7 @@ import com.example.password.util.SharedPreferencesHelper;
  * @author fantasee
  * 
  */
-public class PasswordActivity extends PassWordBaseActivity implements OnClickListener {
+public class PasswordActivity extends PassWordBaseActivity {
 
 	private LocusPassWordView mPwdView;
 	private Context mContext;
@@ -144,7 +144,9 @@ public class PasswordActivity extends PassWordBaseActivity implements OnClickLis
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.mForgotPassword:// Íü¼ÇÃÜÂë
-
+			Intent intent=new Intent(PasswordActivity.this, ForgotPassword.class);
+			startActivity(intent);
+			finish();
 			break;
 
 		default:

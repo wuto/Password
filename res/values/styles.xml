@@ -26,5 +26,22 @@
 	    <item name="android:textSize">14sp</item>
 	    <item name="android:fontFamily">sans-serif-light</item>
 	</style>
+	
+     
+     <style name="btn" parent="@android:style/Widget.TextView">
+		<item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:textColor">@android:color/white</item>
+	    <item name="android:textSize">22sp</item>
+	    <item name="android:layout_marginBottom">10dp</item>
+	    <item name="android:layout_marginTop">10dp</item>
+	    <item name="android:layout_marginLeft">30dp</item>
+	    <item name="android:layout_marginRight">30dp</item>
+	    <item name="android:fontFamily">sans-serif-light</item>
+	    <item name="android:background">@drawable/btn_selector</item>
+	    <item name="android:paddingBottom">10dp</item>
+	    <item name="android:paddingTop">10dp</item>
+	    <item name="android:visibility">gone</item>
+	</style>
     
 </resources>

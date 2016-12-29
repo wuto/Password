@@ -399,7 +399,9 @@ public class LocusPassWordView extends View {
 		if (isFinish) {
 			if (this.sPoints.size() == 1) {
 				this.reset();
-			} else if (sPoints.size()>0&&sPoints.size() < pwdMinLen || sPoints.size() > pwdMaxLen) {
+			} else if (sPoints.size()<=0) {
+				
+			}else if (sPoints.size()>0&&sPoints.size() < pwdMinLen || sPoints.size() > pwdMaxLen) {
 				// mCompleteListener.onPasswordTooMin(sPoints.size());
 				error();
 				clearPassword();
