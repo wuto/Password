@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/setpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="创建手势密码" />
+
+    <Button
+        android:id="@+id/modifypassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="修改手势密码" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除" />
+
+    <Button
+        android:id="@+id/unlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解锁" />
+
+</LinearLayout>
