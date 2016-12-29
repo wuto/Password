@@ -10,7 +10,7 @@ public class MainActivity extends PassWordBaseActivity implements OnClickListene
 	private Button setpassword;
 	private Button modifypassword;
 	private Button delete;
-	private Button unlock;
+//	private Button unlock;
 
 
 	@Override
@@ -18,7 +18,7 @@ public class MainActivity extends PassWordBaseActivity implements OnClickListene
 		setpassword = (Button) findViewById(R.id.setpassword);
 		modifypassword = (Button) findViewById(R.id.modifypassword);
 		delete = (Button) findViewById(R.id.delete);
-		unlock = (Button) findViewById(R.id.unlock);
+//		unlock = (Button) findViewById(R.id.unlock);
 	}
 	
 	@Override
@@ -31,7 +31,7 @@ public class MainActivity extends PassWordBaseActivity implements OnClickListene
 		setpassword.setOnClickListener(this);
 		modifypassword.setOnClickListener(this);
 		delete.setOnClickListener(this);
-		unlock.setOnClickListener(this);
+//		unlock.setOnClickListener(this);
 	}
 
 	
@@ -48,9 +48,9 @@ public class MainActivity extends PassWordBaseActivity implements OnClickListene
 		case R.id.delete:
 			delete();
 			break;
-		case R.id.unlock:
-			unlock();
-			break;
+//		case R.id.unlock:
+//			unlock();
+//			break;
 
 		default:
 			break;
@@ -67,7 +67,7 @@ public class MainActivity extends PassWordBaseActivity implements OnClickListene
 		delete.setVisibility(View.GONE);
 		setpassword.setVisibility(View.GONE);
 		modifypassword.setVisibility(View.GONE);
-		unlock.setVisibility(View.GONE);
+//		unlock.setVisibility(View.GONE);
 	}
 
 
@@ -104,20 +104,20 @@ public class MainActivity extends PassWordBaseActivity implements OnClickListene
 		startActivity(intent);
 	}
 
-	/**
-	 * 解锁
-	 * 
-	 */
-	private void unlock() {
-		Intent intent = new Intent(this, TestActivity.class);
-		intent.putExtra(FlagType.FLAG_TYPE, FlagType.PASSWORD_UNLOCK);
-		intent.putExtra("isneed", true);// 是否需要调到密码界面
-		intent.putExtra("_1", "测试一");
-		intent.putExtra("_2", "测试二");
-		intent.putExtra("_3", "测试三");
-		intent.putExtra("_4", "测试四");
-		startActivity(intent);
-	}
+//	/**
+//	 * 解锁
+//	 * 
+//	 */
+//	private void unlock() {
+//		Intent intent = new Intent(this, TestActivity.class);
+//		intent.putExtra(FlagType.FLAG_TYPE, FlagType.PASSWORD_UNLOCK);
+//		intent.putExtra("isneed", true);// 是否需要调到密码界面
+//		intent.putExtra("_1", "测试一");
+//		intent.putExtra("_2", "测试二");
+//		intent.putExtra("_3", "测试三");
+//		intent.putExtra("_4", "测试四");
+//		startActivity(intent);
+//	}
 
 	@Override
 	protected void onResume() {
@@ -126,7 +126,7 @@ public class MainActivity extends PassWordBaseActivity implements OnClickListene
 		if (PasswordUtil.getlock(this)) {// 有密码
 			delete.setVisibility(View.VISIBLE);
 			modifypassword.setVisibility(View.VISIBLE);
-			unlock.setVisibility(View.VISIBLE);
+//			unlock.setVisibility(View.VISIBLE);
 
 		} else {// 第一次进入 , 无密码
 			setpassword.setVisibility(View.VISIBLE);
