@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Password</string>
+    
     <string name="plz_draw_code">请输入你的密码</string>
     <string name="pwd_setted">密码设置成功!</string>
     <string name="pwd_correct">密码正确.</string>

@@ -71,51 +71,6 @@ public class PasswordUtil {
 	}
 
 	/**
-	 * 
-	 * 解锁类型调用的方法
-	 * 
-	 * @param context
-	 * @param intent
-	 * @param isneed
-	 *            是否需要进入解锁界面
-	 */
-	public static void startActivity(Context context, Intent intent,
-			boolean isneed) {
-		if (isneed && PasswordUtil.isgoin(context)) {
-			Intent _intent = new Intent(context, PasswordActivity.class);
-			_intent.putExtra("intentComponent", intent.getComponent()
-					.getClassName());
-			intent.putExtra(FlagType.FLAG_TYPE, FlagType.PASSWORD_UNLOCK);
-			_intent.putExtras(intent);
-			context.startActivity(_intent);
-		} else {
-			context.startActivity(intent);
-		}
-	}
-
-	/**
-	 * 
-	 * 解锁类型调用的方法 ,需要在intent中传入isneed布尔值，默认为true，即开启密码界面
-	 * 
-	 * @param context
-	 * @param intent
-	 */
-	public static void startActivity(Context context, Intent intent) {
-		boolean isneed = intent.getBooleanExtra(ISNEED, true);//
-		// 是否需要调到密码界面
-		if (isneed && PasswordUtil.isgoin(context)) {
-			Intent _intent = new Intent(context, PasswordActivity.class);
-			_intent.putExtra("intentComponent", intent.getComponent()
-					.getClassName());
-			intent.putExtra(FlagType.FLAG_TYPE, FlagType.PASSWORD_UNLOCK);
-			_intent.putExtras(intent);
-			context.startActivity(_intent);
-		} else {
-			context.startActivity(intent);
-		}
-	}
-
-	/**
 	 * 删除手势密码
 	 * 
 	 * @param context
@@ -149,6 +104,51 @@ public class PasswordUtil {
 		SharedPreferencesHelper sph = SharedPreferencesHelper
 				.getInstance(context);
 		return sph.getString(PASSWORD, "");
+	}
+
+	/**
+	 * 
+	 * 解锁类型调用的方法
+	 * 
+	 * @param context
+	 * @param intent
+	 * @param isneed
+	 *            是否需要进入解锁界面
+	 */
+	public static void startActivity(Context context, Intent intent,
+			boolean isneed) {
+		if (isneed && PasswordUtil.isgoin(context)) {
+			Intent _intent = new Intent(context, PasswordActivity.class);
+			_intent.putExtra("intentComponent", intent.getComponent()
+					.getClassName());
+			intent.putExtra(FlagType.FLAG_TYPE, FlagType.PASSWORD_UNLOCK);
+			_intent.putExtras(intent);
+			context.startActivity(_intent);
+		} else {
+			context.startActivity(intent);
+		}
+	}
+
+	/**
+	 * 
+	 * 解锁类型调用的方法 ,需要在intent中传入isneed布尔值，默认为true，即开启密码界面
+	 * 
+	 * @param context
+	 * @param intent
+	 */
+	public static void startActivity(Context context, Intent intent) {
+		boolean isneed = true;
+		// 是否需要调到密码界面
+		if (isneed && PasswordUtil.isgoin(context)) {
+			Intent _intent = new Intent(context, PasswordActivity.class);
+			_intent.putExtra("intentComponent", intent.getComponent()
+					.getClassName());
+			intent.putExtra(FlagType.FLAG_TYPE, FlagType.PASSWORD_UNLOCK);
+			_intent.putExtras(intent);
+			context.startActivity(_intent);
+		} else {
+			context.startActivity(intent);
+		}
 	}
 
 }

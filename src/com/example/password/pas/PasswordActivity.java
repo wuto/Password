@@ -59,7 +59,7 @@ public class PasswordActivity extends PassWordBaseActivity {
 		mPwdView.setOnCompleteListener(new OnCompleteListener() {
 			@Override
 			public void onComplete(String mPassword) {
-				
+
 				String pwd = PasswordUtil.getPassword(PasswordActivity.this);
 				Md5Utils md5 = new Md5Utils();
 				boolean passed = false;
@@ -89,7 +89,6 @@ public class PasswordActivity extends PassWordBaseActivity {
 							Intent _intent = new Intent(PasswordActivity.this,
 									Class.forName(gointent));
 							_intent.putExtras(mIntent);
-							_intent.putExtra("isneed", false);
 							startActivity(_intent);
 							PasswordActivity.this.finish();
 						} catch (ClassNotFoundException e) {
