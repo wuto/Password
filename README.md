@@ -24,7 +24,7 @@ res目录下的相关文件复制到对应目录
             android:windowSoftInputMode="adjustPan|stateHidden" />
             
             
-  1. 开启应用手势解锁:
+ 1. 开启应用手势解锁:
   
   若没有实现 registerActivityLifecycleCallbacks
   在项目的Application文件中的onCreate方法中添加 
