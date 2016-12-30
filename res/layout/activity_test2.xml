@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#071217"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/setpassword"
+        style="@style/btn"
+        android:text="测试1"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/modifypassword"
+        style="@style/btn"
+        android:text="测试2"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/delete"
+        style="@style/btn"
+        android:text="测试3"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/unlock"
+        style="@style/btn"
+        android:text="测试4"
+        android:visibility="visible" />
+
+</LinearLayout>
