@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PsMainActivity extends PassWordBaseActivity implements
 		OnClickListener {
@@ -120,8 +121,17 @@ public class PsMainActivity extends PassWordBaseActivity implements
 	}
 
 	@Override
-	protected void onResume() {
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == FlagType.PASSWORD_DELETE && resultCode == 200) {
+			Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show();
+		} else if (requestCode == FlagType.PASSWORD_CREAT && resultCode == 200) {
+			Toast.makeText(this, "密码设置成功", Toast.LENGTH_SHORT).show();
+		}
 
+	}
+
+	@Override
+	protected void onResume() {
 		hint();
 		if (PasswordUtil.getlock(this)) {// 有密码
 			delete.setVisibility(View.VISIBLE);
@@ -133,7 +143,6 @@ public class PsMainActivity extends PassWordBaseActivity implements
 			} else {// 未开启
 				open.setText("开启手势密码");
 			}
-
 		} else {// 无密码
 			setpassword.setVisibility(View.VISIBLE);
 		}

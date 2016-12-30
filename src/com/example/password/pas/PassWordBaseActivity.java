@@ -51,8 +51,11 @@ public abstract class PassWordBaseActivity extends Activity implements
 		int _s = intent.getIntExtra(FlagType.FLAG_TYPE, -1);
 		switch (_s) {
 		case FlagType.PASSWORD_CREAT:
+			startActivityForResult(intent, _s);
+			break;
+			
 		case FlagType.PASSWORD_DELETE:
-			startActivity(intent);
+			startActivityForResult(intent, _s);
 			break;
 		case FlagType.PASSWORD_MODIFY:
 			Intent _intent = new Intent(this, PasswordActivity.class);

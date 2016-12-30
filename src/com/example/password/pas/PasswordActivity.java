@@ -50,6 +50,15 @@ public class PasswordActivity extends PassWordBaseActivity {
 		mPwdView = (LocusPassWordView) this.findViewById(R.id.mPassWordView);
 		mTitle = (TextView) this.findViewById(R.id.multi_tv_token_time_hint);
 		mForgotPassword = (TextView) this.findViewById(R.id.mForgotPassword);
+
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		mTitle.setTextColor(0xffffffff);
+		mTitle.setText("请输入你的密码");
+
 	}
 
 	@Override
@@ -72,16 +81,13 @@ public class PasswordActivity extends PassWordBaseActivity {
 				}
 
 				if (passed) {
-					Toast.makeText(mContext,
-							mContext.getString(R.string.pwd_correct),
-							Toast.LENGTH_SHORT).show();
 
 					switch (flag) {
 					case FlagType.PASSWORD_DELETE: // 删除手势密码
 						PasswordUtil.deletePassword(PasswordActivity.this);
-						Toast.makeText(mContext, "删除成功", Toast.LENGTH_SHORT)
-								.show();
+						setResult(200);
 						PasswordActivity.this.finish();
+
 						break;
 
 					case FlagType.PASSWORD_UNLOCK:// 解锁
@@ -118,6 +124,12 @@ public class PasswordActivity extends PassWordBaseActivity {
 						break;
 					}
 				}
+			}
+
+			@Override
+			public void onTooshort(String password) {// 密码太短
+				mTitle.setTextColor(0xffff0000);
+				mTitle.setText("密码至少四位");
 			}
 		});
 	}

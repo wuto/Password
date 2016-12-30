@@ -405,8 +405,7 @@ public class LocusPassWordView extends View {
 				// mCompleteListener.onPasswordTooMin(sPoints.size());
 				error();
 				clearPassword();
-				Toast.makeText(this.getContext(), "密码太短，请至少四位输入",
-						Toast.LENGTH_SHORT).show();
+				mCompleteListener.onTooshort(toPointString());
 			} else if (mCompleteListener != null) {
 				this.disableTouch();
 				mCompleteListener.onComplete(toPointString());
@@ -487,5 +486,6 @@ public class LocusPassWordView extends View {
 	public interface OnCompleteListener {
 		
 		public void onComplete(String password);
+		public void onTooshort(String password);
 	}
 }
