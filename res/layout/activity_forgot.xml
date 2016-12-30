@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#071217"
     android:orientation="vertical" >
 
+    <include
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/include_top_layout" />
+
     <Button
+        android:layout_below="@+id/top_layout"
         android:id="@+id/rest"
         style="@style/btn"
-        android:visibility="visible"
-        android:text="重置密码" />
+        android:text="重置密码"
+        android:visibility="visible" />
 
-   
-
-</LinearLayout>
+</RelativeLayout>

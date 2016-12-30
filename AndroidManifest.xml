@@ -26,12 +26,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.password.PasswordSetting"
+            android:name="com.example.password.pas.PsMainActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.example.password.PasswordActivity"
+            android:name="com.example.password.pas.PasswordSetting"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.example.password.pas.PasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.example.password.pas.ForgotPassword"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="adjustPan|stateHidden" />
@@ -41,7 +51,7 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.example.password.ForgotPassword"
+            android:name="com.example.password.TestActivity2"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="adjustPan|stateHidden" />

@@ -6,31 +6,27 @@
     android:orientation="vertical" >
 
     <Button
-        android:background="@drawable/btn_selector"
         android:id="@+id/setpassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="创建手势密码" />
+        style="@style/btn"
+        android:text="测试1"
+        android:visibility="visible" />
 
     <Button
-        android:background="@drawable/btn_selector"
         android:id="@+id/modifypassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="修改手势密码" />
+        style="@style/btn"
+        android:text="测试2"
+        android:visibility="visible" />
 
     <Button
-        android:background="@drawable/btn_selector"
         android:id="@+id/delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="删除" />
+        style="@style/btn"
+        android:text="测试3"
+        android:visibility="visible" />
 
     <Button
-        android:background="@drawable/btn_selector"
         android:id="@+id/unlock"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="解锁" />
+        style="@style/btn"
+        android:text="测试4"
+        android:visibility="visible" />
 
 </LinearLayout>

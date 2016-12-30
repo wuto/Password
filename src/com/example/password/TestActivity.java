@@ -1,11 +1,15 @@
 package com.example.password;
 
+import com.example.password.pas.PasswordUtil;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class TestActivity extends PassWordBaseActivity {
+public class TestActivity extends Activity implements OnClickListener {
 
 	Button setpassword;
 	Button modifypassword;
@@ -22,30 +26,25 @@ public class TestActivity extends PassWordBaseActivity {
 		delete = (Button) findViewById(R.id.delete);
 		unlock = (Button) findViewById(R.id.unlock);
 
-		Intent intent = getIntent();
-		String _1=intent.getStringExtra("_1");
-		String _2=intent.getStringExtra("_2");
-		String _3=intent.getStringExtra("_3");
-		String _4=intent.getStringExtra("_4");
-		
-		setpassword.setText(_1);
-		modifypassword.setText(_2);
-		delete.setText(_3);
-		unlock.setText(_4);
-		
-		
+		setpassword.setOnClickListener(this);
 
-	}
-	
-	@Override
-	protected void init() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
-	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
-		
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.setpassword:
+			Intent intent = new Intent(this, TestActivity2.class);
+			intent.putExtra("_1", "北京");
+			intent.putExtra("_2", "上海");
+			intent.putExtra("_3", "西安");
+			intent.putExtra("_4", "深圳");
+			PasswordUtil.startActivity(this, intent, true);
+			break;
+
+		default:
+			break;
+		}
+
 	}
 }

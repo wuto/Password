@@ -1,4 +1,4 @@
-package com.example.password;
+package com.example.password.pas;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,6 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.password.R;
+import com.example.password.R.id;
+import com.example.password.R.layout;
+import com.example.password.R.string;
 import com.example.password.component.LocusPassWordView;
 import com.example.password.component.LocusPassWordView.OnCompleteListener;
 import com.example.password.util.Md5Utils;
@@ -22,7 +26,7 @@ import com.example.password.util.SharedPreferencesHelper;
  * @author fantasee
  * 
  */
-public class PasswordSetting extends PassWordBaseActivity implements OnClickListener {
+public class PasswordSetting extends PassWordBaseActivity  {
 
 	private LocusPassWordView mPwdView;
 	private Context mContext;
@@ -30,10 +34,6 @@ public class PasswordSetting extends PassWordBaseActivity implements OnClickList
 
 	private String pswone = "";
 	
-	
-//	private LinearLayout topLayout;
-//	private TextView toptitle;
-
 	@Override
 	protected void init() {
 		setContentView(R.layout.setting);
@@ -46,10 +46,7 @@ public class PasswordSetting extends PassWordBaseActivity implements OnClickList
 		mPwdView = (LocusPassWordView) this.findViewById(R.id.mPassWordView);
 		mTitle = (TextView) this.findViewById(R.id.multi_tv_token_time_hint);
 		
-//		topLayout = (LinearLayout) findViewById(R.id.ll_top_bar_left);
-//		toptitle = (TextView) findViewById(R.id.titlebar_name_tv);
-		
-		toptitle.setText("创建手势密码");
+		setTopTitle("创建手势密码");
 		mTitle.setText("请绘制手势密码");
 	}
 
@@ -60,8 +57,6 @@ public class PasswordSetting extends PassWordBaseActivity implements OnClickList
 		mPwdView.setOnCompleteListener(new OnCompleteListener() {
 			@Override
 			public void onComplete(String mPassword) {
-				SharedPreferencesHelper sph = SharedPreferencesHelper
-						.getInstance(getApplicationContext());
 				Md5Utils md5 = new Md5Utils();
 
 				if (TextUtils.isEmpty(pswone)) {
@@ -75,7 +70,7 @@ public class PasswordSetting extends PassWordBaseActivity implements OnClickList
 						Toast.makeText(mContext,
 								mContext.getString(R.string.pwd_setted),
 								Toast.LENGTH_SHORT).show();
-						sph.putString("password", md5.toMd5(mPassword, ""));
+						PasswordUtil.setPassword(PasswordSetting.this, md5.toMd5(mPassword, ""));
 						mTitle.setText("设置成功");
 						finish();
 					} else {
@@ -91,17 +86,9 @@ public class PasswordSetting extends PassWordBaseActivity implements OnClickList
 		});
 	}
 
-//	@Override
-//	public void onClick(View v) {
-//		switch (v.getId()) {
-//		case R.id.ll_top_bar_left:
-//			finish();
-//			break;
-//
-//		default:
-//			break;
-//		}
-//		
-//	}
+	@Override
+	public void onClick(View v) {
+		super.onClick(v);
+	}
 
 }

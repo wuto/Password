@@ -1,5 +1,7 @@
 package com.example.password;
 
+import com.example.password.pas.InitApp;
+
 import android.app.Application;
 
 public class MyApplication extends Application {

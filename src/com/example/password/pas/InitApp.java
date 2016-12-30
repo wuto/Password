@@ -1,4 +1,4 @@
-package com.example.password;
+package com.example.password.pas;
 
 import android.app.Activity;
 import android.app.Application.ActivityLifecycleCallbacks;
@@ -7,11 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.password.MyApplication;
 import com.example.password.util.SharedPreferencesHelper;
 
 public class InitApp {
 
-	static int count = 0;
+	private static int count = 0;
 
 	/**
 	 * 当用户没有使用MyApplication的registerActivityLifecycleCallbacks回调时，

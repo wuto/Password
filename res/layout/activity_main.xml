@@ -4,23 +4,6 @@
     android:layout_height="match_parent"
     android:background="@android:color/white" >
 
-    <include
-        android:id="@+id/top_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        layout="@layout/include_top_layout" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/top_layout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:textSize="22sp"
-        android:textColor="#000000"
-        android:gravity="center_horizontal"
-        android:text="手势密码设置" />
 
     <LinearLayout
         android:id="@+id/ll_set"
@@ -32,18 +15,16 @@
 
         <Button
             android:id="@+id/setpassword"
+            android:visibility="visible"
             style="@style/btn"
-            android:text="创建手势密码" />
+            android:text="进入手势密码" />
 
         <Button
+            android:visibility="visible"
             android:id="@+id/modifypassword"
             style="@style/btn"
-            android:text="修改手势密码" />
+            android:text="测试" />
 
-        <Button
-            android:id="@+id/delete"
-            style="@style/btn"
-            android:text="删除" />
     </LinearLayout>
 
 </RelativeLayout>

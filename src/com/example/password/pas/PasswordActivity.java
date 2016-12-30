@@ -1,4 +1,4 @@
-package com.example.password;
+package com.example.password.pas;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,10 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.password.R;
+import com.example.password.R.id;
+import com.example.password.R.layout;
+import com.example.password.R.string;
 import com.example.password.component.LocusPassWordView;
 import com.example.password.component.LocusPassWordView.OnCompleteListener;
 import com.example.password.util.Md5Utils;
@@ -17,7 +21,6 @@ import com.example.password.util.SharedPreferencesHelper;
  * 
  * 绘制密码界面
  * 
- * @author fantasee
  * 
  */
 public class PasswordActivity extends PassWordBaseActivity {
@@ -56,9 +59,8 @@ public class PasswordActivity extends PassWordBaseActivity {
 		mPwdView.setOnCompleteListener(new OnCompleteListener() {
 			@Override
 			public void onComplete(String mPassword) {
-				SharedPreferencesHelper sph = SharedPreferencesHelper
-						.getInstance(getApplicationContext());
-				String pwd = sph.getString("password", "");
+				
+				String pwd = PasswordUtil.getPassword(PasswordActivity.this);
 				Md5Utils md5 = new Md5Utils();
 				boolean passed = false;
 
@@ -76,16 +78,12 @@ public class PasswordActivity extends PassWordBaseActivity {
 
 					switch (flag) {
 					case FlagType.PASSWORD_DELETE: // 删除手势密码
-						sph.putString("password", "");
+						PasswordUtil.deletePassword(PasswordActivity.this);
 						Toast.makeText(mContext, "删除成功", Toast.LENGTH_SHORT)
 								.show();
 						PasswordActivity.this.finish();
 						break;
 
-					case FlagType.PASSWORD_QUAN:// 全局
-						PasswordActivity.this.finish();
-
-						break;
 					case FlagType.PASSWORD_UNLOCK:// 解锁
 						try {
 							Intent _intent = new Intent(PasswordActivity.this,
@@ -102,14 +100,17 @@ public class PasswordActivity extends PassWordBaseActivity {
 						try {
 							Intent _intent = new Intent(PasswordActivity.this,
 									Class.forName(gointent));
-							_intent.putExtras(mIntent);
-							_intent.putExtra("isneed", false);
 							startActivity(_intent);
 							PasswordActivity.this.finish();
 						} catch (ClassNotFoundException e) {
 							e.printStackTrace();
 						}
 						break;
+
+					case FlagType.PASSWORD_QUAN:// 全局
+						PasswordActivity.this.finish();
+						break;
+
 					case FlagType.PASSWORD_CREAT:
 
 						break;
@@ -142,9 +143,11 @@ public class PasswordActivity extends PassWordBaseActivity {
 
 	@Override
 	public void onClick(View v) {
+		super.onClick(v);
 		switch (v.getId()) {
 		case R.id.mForgotPassword:// 忘记密码
-			Intent intent=new Intent(PasswordActivity.this, ForgotPassword.class);
+			Intent intent = new Intent(PasswordActivity.this,
+					ForgotPassword.class);
 			startActivity(intent);
 			finish();
 			break;

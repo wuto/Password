@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <include
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/include_top_layout" />
+
+    <TextView
+        android:id="@+id/tit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="手势密码设置"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="开启手势密码"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/open"
+            style="@style/btn"
+            android:text="开启手势密码"
+            android:visibility="visible" />
+
+
+        <Button
+            android:id="@+id/setpassword"
+            style="@style/btn"
+            android:text="创建手势密码" />
+
+        <Button
+            android:id="@+id/modifypassword"
+            style="@style/btn"
+            android:text="修改手势密码" />
+
+        <Button
+            android:id="@+id/delete"
+            style="@style/btn"
+            android:text="删除" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.password;
+package com.example.password.pas;
 class FlagType{
 		public final static String FLAG_TYPE="flagtype";//类型
 		public final static int PASSWORD_CREAT=0;//创建手势密码
