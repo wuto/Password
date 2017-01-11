@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import com.wuto.password.R;
 
 public class MainActivity extends Activity implements OnClickListener{
 
@@ -26,17 +27,14 @@ public class MainActivity extends Activity implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.setpassword:
+		int id = v.getId();
+		if (id == R.id.setpassword) {
 			Intent intent=new Intent(this, PsMainActivity.class);
 			startActivity(intent);
-			break;
-		case R.id.modifypassword:
+		} else if (id == R.id.modifypassword) {
 			Intent intent2=new Intent(this, TestActivity.class);
 			startActivity(intent2);
-			break;
-		default:
-			break;
+		} else {
 		}
 		
 	}

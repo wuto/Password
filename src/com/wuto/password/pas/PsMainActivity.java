@@ -53,18 +53,14 @@ public class PsMainActivity extends PassWordBaseActivity implements
 	@Override
 	public void onClick(View v) {
 		super.onClick(v);
-		switch (v.getId()) {
-		case R.id.setpassword:
+		int id = v.getId();
+		if (id == R.id.setpassword) {
 			setpassword();
-			break;
-		case R.id.modifypassword:
+		} else if (id == R.id.modifypassword) {
 			modifypassword();
-			break;
-		case R.id.delete:
+		} else if (id == R.id.delete) {
 			delete();
-			break;
-		case R.id.open:
-
+		} else if (id == R.id.open) {
 			if (PasswordUtil.getisopen(this)) {// 开启
 				PasswordUtil.setisopen(this, false);
 				open.setText("开启手势密码");
@@ -72,10 +68,7 @@ public class PsMainActivity extends PassWordBaseActivity implements
 				PasswordUtil.setisopen(this, true);
 				open.setText("关闭手势密码");
 			}
-			break;
-
-		default:
-			break;
+		} else {
 		}
 
 	}

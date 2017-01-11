@@ -85,12 +85,10 @@ public abstract class PassWordBaseActivity extends Activity implements
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.ll_top_bar_left:
+		int id = v.getId();
+		if (id == R.id.ll_top_bar_left) {
 			finish();
-			break;
-		default:
-			break;
+		} else {
 		}
 
 	}
