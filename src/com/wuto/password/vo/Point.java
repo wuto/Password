@@ -1,4 +1,4 @@
-package com.example.password.vo;
+package com.wuto.password.vo;
 
 public class Point {
 	public static int STATE_NORMAL = 0;

@@ -1,5 +1,5 @@
 /* Copyright (c) ViaCube.  All worldwide rights reserved. */ 
-package com.example.password.util;
+package com.wuto.password.util;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,9 +1,9 @@
-package com.example.password.pas;
+package com.wuto.password.pas;
 
-import com.example.password.R;
-import com.example.password.R.id;
-import com.example.password.R.layout;
-import com.example.password.util.SharedPreferencesHelper;
+import com.wuto.password.R;
+import com.wuto.password.R.id;
+import com.wuto.password.R.layout;
+import com.wuto.password.util.SharedPreferencesHelper;
 
 import android.content.Intent;
 import android.view.View;

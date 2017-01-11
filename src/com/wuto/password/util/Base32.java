@@ -1,4 +1,4 @@
-package com.example.password.util;
+package com.wuto.password.util;
 
 import android.util.Log;
 

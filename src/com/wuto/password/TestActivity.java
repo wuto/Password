@@ -1,6 +1,6 @@
-package com.example.password;
+package com.wuto.password;
 
-import com.example.password.pas.PasswordUtil;
+import com.wuto.password.pas.PasswordUtil;
 
 import android.app.Activity;
 import android.content.Intent;

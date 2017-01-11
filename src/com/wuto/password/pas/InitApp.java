@@ -1,4 +1,4 @@
-package com.example.password.pas;
+package com.wuto.password.pas;
 
 import android.app.Activity;
 import android.app.Application.ActivityLifecycleCallbacks;
@@ -7,8 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.password.MyApplication;
-import com.example.password.util.SharedPreferencesHelper;
+import com.wuto.password.MyApplication;
+import com.wuto.password.util.SharedPreferencesHelper;
 
 public class InitApp {
 

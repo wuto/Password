@@ -1,12 +1,12 @@
-package com.example.password.component;
+package com.wuto.password.component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.example.password.util.MathUtil;
-import com.example.password.vo.Point;
+import com.wuto.password.util.MathUtil;
+import com.wuto.password.vo.Point;
 
 import android.content.Context;
 import android.graphics.Canvas;

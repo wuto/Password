@@ -1,4 +1,4 @@
-package com.example.password.util;
+package com.wuto.password.util;
 
 public class MathUtil {
 	/**

@@ -1,10 +1,10 @@
-package com.example.password.pas;
+package com.wuto.password.pas;
 
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import com.example.password.util.SharedPreferencesHelper;
+import com.wuto.password.util.SharedPreferencesHelper;
 
 public class PasswordUtil {
 	// 1.界面需要开启手势密码

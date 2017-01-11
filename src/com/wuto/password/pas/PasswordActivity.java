@@ -1,4 +1,4 @@
-package com.example.password.pas;
+package com.wuto.password.pas;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,14 +8,14 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.password.R;
-import com.example.password.R.id;
-import com.example.password.R.layout;
-import com.example.password.R.string;
-import com.example.password.component.LocusPassWordView;
-import com.example.password.component.LocusPassWordView.OnCompleteListener;
-import com.example.password.util.Md5Utils;
-import com.example.password.util.SharedPreferencesHelper;
+import com.wuto.password.R;
+import com.wuto.password.R.id;
+import com.wuto.password.R.layout;
+import com.wuto.password.R.string;
+import com.wuto.password.component.LocusPassWordView;
+import com.wuto.password.component.LocusPassWordView.OnCompleteListener;
+import com.wuto.password.util.Md5Utils;
+import com.wuto.password.util.SharedPreferencesHelper;
 
 /**
  * 

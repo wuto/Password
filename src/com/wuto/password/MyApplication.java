@@ -1,6 +1,6 @@
-package com.example.password;
+package com.wuto.password;
 
-import com.example.password.pas.InitApp;
+import com.wuto.password.pas.InitApp;
 
 import android.app.Application;
 
