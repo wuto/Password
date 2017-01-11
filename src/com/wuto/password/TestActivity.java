@@ -32,18 +32,15 @@ public class TestActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.setpassword:
+		int id = v.getId();
+		if (id == R.id.setpassword) {
 			Intent intent = new Intent(this, TestActivity2.class);
 			intent.putExtra("_1", "北京");
 			intent.putExtra("_2", "上海");
 			intent.putExtra("_3", "西安");
 			intent.putExtra("_4", "深圳");
 			PasswordUtil.startActivity(this, intent, true);
-			break;
-
-		default:
-			break;
+		} else {
 		}
 
 	}

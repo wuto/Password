@@ -39,13 +39,10 @@ public class ForgotPassword extends PassWordBaseActivity  {
 	@Override
 	public void onClick(View v) {
 		super.onClick(v);
-		switch (v.getId()) {
-		case R.id.rest:
+		int id = v.getId();
+		if (id == R.id.rest) {
 			PasswordUtil.deletePassword(this);
-			break;
-
-		default:
-			break;
+		} else {
 		}
 
 	}

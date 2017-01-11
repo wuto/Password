@@ -155,16 +155,13 @@ public class PasswordActivity extends PassWordBaseActivity {
 	@Override
 	public void onClick(View v) {
 		super.onClick(v);
-		switch (v.getId()) {
-		case R.id.mForgotPassword:// Íü¼ÇÃÜÂë
+		int id = v.getId();
+		if (id == R.id.mForgotPassword) {
 			Intent intent = new Intent(PasswordActivity.this,
 					ForgotPassword.class);
 			startActivity(intent);
 			finish();
-			break;
-
-		default:
-			break;
+		} else {
 		}
 
 	}
