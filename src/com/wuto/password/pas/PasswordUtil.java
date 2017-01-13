@@ -117,6 +117,7 @@ public class PasswordUtil {
 	 */
 	public static void startActivity(Context context, Intent intent,
 			boolean isneed) {
+		// 是否需要调到密码界面
 		if (isneed && PasswordUtil.isgoin(context)) {
 			Intent _intent = new Intent(context, PasswordActivity.class);
 			_intent.putExtra("intentComponent", intent.getComponent()
@@ -137,18 +138,7 @@ public class PasswordUtil {
 	 * @param intent
 	 */
 	public static void startActivity(Context context, Intent intent) {
-		boolean isneed = true;
-		// 是否需要调到密码界面
-		if (isneed && PasswordUtil.isgoin(context)) {
-			Intent _intent = new Intent(context, PasswordActivity.class);
-			_intent.putExtra("intentComponent", intent.getComponent()
-					.getClassName());
-			intent.putExtra(FlagType.FLAG_TYPE, FlagType.PASSWORD_UNLOCK);
-			_intent.putExtras(intent);
-			context.startActivity(_intent);
-		} else {
-			context.startActivity(intent);
-		}
+		startActivity(context, intent, true);
 	}
 
 }
