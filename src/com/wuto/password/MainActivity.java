@@ -16,7 +16,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main); 
 		
 		TextView setpassword=(TextView) findViewById(R.id.setpassword);
 		TextView modifypassword=(TextView) findViewById(R.id.modifypassword);
